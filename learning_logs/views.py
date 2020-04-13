@@ -10,6 +10,7 @@ def index(request):
     """The home page for Learning Log"""
     return render(request, "learning_logs/index.html")
 
+@login_required
 def topics(request):
     """Show all topics."""
     topics = Topic.objects.filter(owner=request.user).order_by("date_added")
