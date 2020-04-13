@@ -147,7 +147,7 @@ if os.getcwd() == "/app":
             "defaut": dj_database_url.config(default="postgres://localhost")
             }
 
-    # Honor the "X-Forwarded-Proto" header gor request.is_secure().
+    # Honor the "X-Forwarded-Proto" header for request.is_secure().
     SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
 
     # Allow all host headers.
@@ -155,7 +155,7 @@ if os.getcwd() == "/app":
 
     # Static asset configuration
     BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-    STATIC_ROOT = os.path.join(BASE_DIR, "static")
+    STATIC_ROOT = "staticfiles"
     STATICFILES_DIRS = (
             os.path.join(BASE_DIR, "static"),
             )
