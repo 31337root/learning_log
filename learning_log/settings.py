@@ -22,11 +22,6 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = '3mh4l)(1z*p99bz46#syyfu5da21c4j9to)(-flispa^pit$t9'
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
-ALLOWED_HOSTS = []
-
 
 # Application definition
 
@@ -149,6 +144,11 @@ DATABASES = {
 
 # Honor the "X-Forwarded-Proto" header for request.is_secure().
 SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
+
+# Allow only Heroku to host the project.
+ALLOWED_HOSTS = ["31337root.herokuapp.com"]
+
+DEBUG = False
 
 # Allow all host headers.
 ALLOWED_HOSTS = ['*']
